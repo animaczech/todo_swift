@@ -11,7 +11,6 @@ import UIKit
 class ItemCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var descriptionLabel: UILabel!
     
     override func awakeFromNib() {
@@ -23,6 +22,16 @@ class ItemCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    
+    /**
+     Obnový hodnoty buňky, informacemi z přiřaženého itemu.
+     - Parameter item: Item, který přísluší buňce
+     */
+    func update(item: Item) {
+        nameLabel.text = item.name
+        descriptionLabel.text = item.description
     }
 
 }

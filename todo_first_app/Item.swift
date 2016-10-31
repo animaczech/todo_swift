@@ -9,6 +9,12 @@
 import Foundation
 
 class Item: PItem {
+    
+    
+    // TROCHA TEORIE
+    // private - omezuje přístup, pouze v rozmezí slošených závorek
+    // file-private - omezuje přístup, na celý zdrojový soubor tzn. po případném označení name jako file-private, by jsme k němu měli přístup například v extension, který by byl napsán ve stejném souboru
+    
     var name: String
     var description: String
     var state: Bool

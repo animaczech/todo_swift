@@ -3,13 +3,14 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--MainVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="todo_first_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="MainVC" customModule="todo_first_app" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -23,34 +24,41 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="XFp-D1-WHa" customClass="ItemCell" customModule="todo_first_app" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" id="XFp-D1-WHa" userLabel="ItemCell" customClass="ItemCell" customModule="todo_first_app" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XFp-D1-WHa" id="xlW-vh-hgQ">
-                                            <frame key="frameInset" width="375" height="43"/>
+                                            <frame key="frameInset" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xv-7b-8Xt">
-                                                    <frame key="frameInset" minX="166" minY="14" width="42" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM1-vB-gab">
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="5kg-PA-fAz"/>
+                                                        <constraint firstAttribute="width" constant="138" id="ctJ-rG-aNc"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JM1-vB-gab">
-                                                    <frame key="frameInset" minX="77" minY="14" width="42" height="14"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5xv-7b-8Xt">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="JM1-vB-gab" firstAttribute="centerY" secondItem="xlW-vh-hgQ" secondAttribute="centerY" id="Ndu-b8-PM0"/>
+                                                <constraint firstItem="5xv-7b-8Xt" firstAttribute="leading" secondItem="JM1-vB-gab" secondAttribute="trailing" constant="8" id="P7r-A7-3qu"/>
+                                                <constraint firstItem="JM1-vB-gab" firstAttribute="leading" secondItem="xlW-vh-hgQ" secondAttribute="leadingMargin" id="RqA-Cn-hgp"/>
+                                                <constraint firstItem="5xv-7b-8Xt" firstAttribute="top" secondItem="xlW-vh-hgQ" secondAttribute="top" constant="3" id="VLD-TN-jUP"/>
+                                                <constraint firstAttribute="bottom" secondItem="5xv-7b-8Xt" secondAttribute="bottom" constant="3" id="Z93-wC-l5g"/>
+                                                <constraint firstItem="5xv-7b-8Xt" firstAttribute="trailing" secondItem="xlW-vh-hgQ" secondAttribute="trailingMargin" id="cX6-ma-GoB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <accessibility key="accessibilityConfiguration" identifier="ItemCell"/>
                                         <connections>
                                             <outlet property="descriptionLabel" destination="5xv-7b-8Xt" id="KGX-QP-rwt"/>
-                                            <outlet property="itemName" destination="JM1-vB-gab" id="tNu-OA-RKx"/>
                                             <outlet property="nameLabel" destination="JM1-vB-gab" id="lbz-KA-OY7"/>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="1jX-Ic-SQ9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -59,7 +67,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <connections>
-                        <outlet property="itemCell" destination="XFp-D1-WHa" id="lgw-Vt-PD8"/>
                         <outlet property="tableView" destination="nKE-EV-BLe" id="FeC-jI-w2c"/>
                     </connections>
                 </viewController>
