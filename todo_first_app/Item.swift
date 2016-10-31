@@ -18,12 +18,24 @@ class Item: PItem {
     var name: String
     var description: String
     var state: Bool
+    var date: String
     
     init(name: String, description: String) {
         self.name = name
         self.description = description
         self.state = false
+        self.date = NSDate.getCurrentDate(style: .long)
     }
-    
-    
+}
+
+
+// Vyřešil jsem to takto, možná to jde lépe, ale už jsem unavenej
+extension NSDate {
+    static func getCurrentDate(style: DateFormatter.Style) -> String {
+        let dateFormatter = DateFormatter()
+        let currentDate = Date()
+        dateFormatter.locale = NSLocale.current
+        dateFormatter.dateStyle = style
+        return dateFormatter.string(from: currentDate)
+    }
 }

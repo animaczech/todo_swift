@@ -113,16 +113,29 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GeW-nf-bJE">
+                                <frame key="frameInset" minX="220" minY="83" width="139" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Tbf-JT-hd8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="B7D-ms-2vL" firstAttribute="top" secondItem="l9s-P4-QzY" secondAttribute="bottom" constant="10" id="0Uc-bq-hFA"/>
                             <constraint firstItem="l9s-P4-QzY" firstAttribute="top" secondItem="EZ2-Gr-uol" secondAttribute="bottom" constant="10" id="9Np-id-83h"/>
+                            <constraint firstItem="GeW-nf-bJE" firstAttribute="trailing" secondItem="vAB-ce-QWZ" secondAttribute="trailingMargin" id="MXN-uV-fWT"/>
+                            <constraint firstItem="GeW-nf-bJE" firstAttribute="leading" secondItem="l9s-P4-QzY" secondAttribute="trailing" constant="10" id="XTa-j5-mlh"/>
+                            <constraint firstItem="GeW-nf-bJE" firstAttribute="top" secondItem="EZ2-Gr-uol" secondAttribute="bottom" constant="12" id="ajG-PD-V8H"/>
                             <constraint firstItem="B7D-ms-2vL" firstAttribute="leading" secondItem="vAB-ce-QWZ" secondAttribute="leadingMargin" id="dtj-kD-bBk"/>
                             <constraint firstItem="l9s-P4-QzY" firstAttribute="leading" secondItem="vAB-ce-QWZ" secondAttribute="leadingMargin" id="pYf-uK-Yth"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="dateItem" destination="GeW-nf-bJE" id="2V3-HU-IDd"/>
                         <outlet property="descriptionItem" destination="B7D-ms-2vL" id="1zX-95-TiB"/>
                         <outlet property="nameItem" destination="l9s-P4-QzY" id="ojM-T7-y7h"/>
                     </connections>

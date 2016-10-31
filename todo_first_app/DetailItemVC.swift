@@ -10,8 +10,10 @@ import UIKit
 
 class DetailItemVC: UIViewController {
 
+   
     @IBOutlet weak var nameItem: UILabel!
     @IBOutlet weak var descriptionItem: UILabel!
+     @IBOutlet weak var dateItem: UILabel!
     
     
     private var _item: Item!
@@ -31,6 +33,7 @@ class DetailItemVC: UIViewController {
         
         nameItem.text = item.name
         descriptionItem.text = item.description
+        dateItem.text = item.date
     }
 
     
