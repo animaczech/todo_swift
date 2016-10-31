@@ -48,9 +48,8 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         // Připravený na pro vykonání přechodu na další view, po kliknutí na řádek
-        //let item = items[indexPath.row]
-        //performSegue(withIdentifier: "ItemDetail", sender: item)
-        
+        let item = items[indexPath.row]
+        performSegue(withIdentifier: "ItemDetail", sender: item)
     }
     
     /**
@@ -79,6 +78,25 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
     }
+    
+    /**
+     Tato metoda slouží pro úpravy předtím než se vykoná přechod na jiné okno.
+     Využívá se pro předání informací.
+     Poté když je zavolána metoda, v našem případě např. 
+      performSegue(withIdentifier: "ItemDetail", sender: item)
+     je přední zpracována tato.
+    */
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        //Zjistíme zda se jedná o konkrétní okno kam přecházíme
+        if let destination = segue.destination as? DetailItemVC {
+            // zjistíme, zda předmět který předáváme je náš item
+            if let item = sender as? Item {
+                //V DetailItemVC máme attribut item, tak mu ho předáme
+                destination.item = item
+            }
+        }
+    }
+
 
     
 }
