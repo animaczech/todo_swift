@@ -20,6 +20,8 @@
 		8126AEBE1DC64955003BDEDB /* PItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126AEBD1DC64955003BDEDB /* PItemCell.swift */; };
 		8126AEC21DC64BF9003BDEDB /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8126AEC11DC64BF9003BDEDB /* ItemCell.swift */; };
 		EA9BD95D1DC7F861008E9A77 /* DetailItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9BD95C1DC7F861008E9A77 /* DetailItemVC.swift */; };
+		EACAB2641DC8ED8600A7A7B8 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAB2631DC8ED8600A7A7B8 /* DataService.swift */; };
+		EACAB2681DC8F67100A7A7B8 /* AddItemVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = EACAB2671DC8F67100A7A7B8 /* AddItemVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,8 @@
 		8126AEBD1DC64955003BDEDB /* PItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PItemCell.swift; sourceTree = "<group>"; };
 		8126AEC11DC64BF9003BDEDB /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		EA9BD95C1DC7F861008E9A77 /* DetailItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailItemVC.swift; sourceTree = "<group>"; };
+		EACAB2631DC8ED8600A7A7B8 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		EACAB2671DC8F67100A7A7B8 /* AddItemVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddItemVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 		8126AEB71DC64438003BDEDB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				EACAB2631DC8ED8600A7A7B8 /* DataService.swift */,
 				8126AEB81DC644E9003BDEDB /* Item.swift */,
 				8126AEBA1DC64551003BDEDB /* Protocols */,
 			);
@@ -171,6 +176,7 @@
 			children = (
 				8126AE881DC637FA003BDEDB /* MainVC.swift */,
 				EA9BD95C1DC7F861008E9A77 /* DetailItemVC.swift */,
+				EACAB2671DC8F67100A7A7B8 /* AddItemVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -238,7 +244,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0800;
-				LastUpgradeCheck = 0800;
+				LastUpgradeCheck = 0810;
 				ORGANIZATIONNAME = "David Aldorf";
 				TargetAttributes = {
 					8126AE821DC637FA003BDEDB = {
@@ -315,10 +321,12 @@
 				8126AEBE1DC64955003BDEDB /* PItemCell.swift in Sources */,
 				EA9BD95D1DC7F861008E9A77 /* DetailItemVC.swift in Sources */,
 				8126AEBC1DC64588003BDEDB /* PItem.swift in Sources */,
+				EACAB2681DC8F67100A7A7B8 /* AddItemVC.swift in Sources */,
 				8126AEB91DC644E9003BDEDB /* Item.swift in Sources */,
 				8126AE8F1DC637FA003BDEDB /* todo_first_app.xcdatamodeld in Sources */,
 				8126AE891DC637FA003BDEDB /* MainVC.swift in Sources */,
 				8126AE871DC637FA003BDEDB /* AppDelegate.swift in Sources */,
+				EACAB2641DC8ED8600A7A7B8 /* DataService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,6 +399,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -441,6 +450,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_SUSPICIOUS_MOVES = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;

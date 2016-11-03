@@ -8,23 +8,38 @@
 
 import Foundation
 
-class Item: PItem {
+class Item: NSObject, NSCoding {
     
     
     // TROCHA TEORIE
     // private - omezuje přístup, pouze v rozmezí slošených závorek
     // file-private - omezuje přístup, na celý zdrojový soubor tzn. po případném označení name jako file-private, by jsme k němu měli přístup například v extension, který by byl napsán ve stejném souboru
     
-    var name: String
-    var description: String
-    var state: Bool
-    var date: String
+   var name: String!
+    var descriptionItem: String!
+     var state: Bool!
+     var date: String!
     
     init(name: String, description: String) {
         self.name = name
-        self.description = description
+        self.descriptionItem = description
         self.state = false
         self.date = NSDate.getCurrentDate(style: .long)
+    }
+
+    
+    override init() {
+        
+    }
+    required convenience init?(coder aDecoder: NSCoder) {
+        self.init()
+        self.name = (aDecoder.decodeObject(forKey: "name") as? String)!
+        self.descriptionItem = (aDecoder.decodeObject(forKey: "descriptionItem") as? String)!
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.descriptionItem, forKey: "descriptionItem")
+        aCoder.encode(self.name, forKey: "name")
     }
 }
 

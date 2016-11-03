@@ -9,6 +9,7 @@
 import UIKit
 
 class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var editButton: UIBarButtonItem!
 
 
     @IBOutlet weak var tableView: UITableView!
@@ -32,6 +33,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         //Přidání itemů do "databáze"
         items.append(item1)
         items.append(item2)
+        
+        DataService.instance.loadItem()
+        NotificationCenter.default.addObserver(self, selector: #selector(MainVC.onPostLoaded(_:)), name: NSNotification.Name(rawValue: "itemsLoaded"), object: nil)
     }
     
     /**
@@ -57,7 +61,7 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
      - Returns: Vrací močet řádků, který má tableView.
     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return DataService.instance.loadedItems.count
     }
     
     /**
@@ -66,16 +70,17 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
     */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let item = DataService.instance.loadedItems[(indexPath as NSIndexPath).row]
+        
         if let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as? ItemCell {
-            
-            let item = items[indexPath.row]
-            
+    
             cell.update(item: item)
             
             return cell
-            
         } else {
-            return UITableViewCell()
+            let cell = ItemCell()
+            cell.update(item: item)
+            return cell
         }
     }
     
@@ -97,6 +102,9 @@ class MainVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         }
     }
 
+    func onPostLoaded(_ notif: AnyObject) {
+        tableView.reloadData()
+    }
 
     
 }

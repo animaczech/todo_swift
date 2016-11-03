@@ -32,7 +32,7 @@ class DetailItemVC: UIViewController {
         // Do any additional setup after loading the view.
         
         nameItem.text = item.name
-        descriptionItem.text = item.description
+        descriptionItem.text = item.descriptionItem
         dateItem.text = item.date
     }
 

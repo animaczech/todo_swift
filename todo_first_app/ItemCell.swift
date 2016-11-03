@@ -31,7 +31,7 @@ class ItemCell: UITableViewCell {
      */
     func update(item: Item) {
         nameLabel.text = item.name
-        descriptionLabel.text = item.description
+        descriptionLabel.text = item.descriptionItem
     }
 
 }
